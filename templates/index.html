@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azra Bano AI Agent</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-fire"></i>
+                    <h1>AZRA BANO AI</h1>
+                </div>
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Initializing...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section" id="welcomeSection">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h2>ASK ME ANYTHING ABOUT AZRA</h2>
+                    <p>Yo, I'm Azra's AI - powered by some next-level tech. I can tell you about her hustle, background, skills, and vibe based on her website and LinkedIn. Fire away! 🔥</p>
+                    
+                    <div class="sample-questions" id="sampleQuestions">
+                        <h3>🔥 Try asking:</h3>
+                        <div class="question-chips" id="questionChips">
+                            <!-- Sample questions will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="init-button">
+                        <button class="btn btn-primary" id="initButton" onclick="initializeAgent()">
+                            <i class="fas fa-rocket"></i>
+                            LAUNCH AI
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-container" id="chatContainer" style="display: none;">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be added here -->
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input type="text" id="questionInput" placeholder="Ask me anything about Azra..." class="chat-input">
+                        <button class="send-button" id="sendButton" onclick="askQuestion()">
+                            <i class="fas fa-bolt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Powered by AI • Data from <a href="https://azra-bano.com" target="_blank">azra-bano.com</a></p>
+                <button class="btn btn-secondary" onclick="refreshKnowledgeBase()">
+                    <i class="fas fa-fire"></i>
+                    REFRESH DATA
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <p id="loadingText">Initializing...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
